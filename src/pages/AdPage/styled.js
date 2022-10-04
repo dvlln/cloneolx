@@ -16,6 +16,10 @@ export const PageArea = styled.div`
         margin-bottom: 20px;
     }
 
+    .box--padding {
+        padding: 10px;
+    }
+
     .leftSide {
         flex: 1;
         margin-right: 20px;
@@ -39,7 +43,7 @@ export const PageArea = styled.div`
             }
 
             .adDescription {
-                
+
             }
         }
     }

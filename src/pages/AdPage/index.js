@@ -45,7 +45,16 @@ const Page = () => {
                     </div>
                 </div>
                 <div className="rightSide">
-
+                    <div className="box box--padding">
+                        {loading && 
+                            <Fake height={20} />
+                        }
+                    </div>
+                    <div className="box box--padding">
+                        {loading && 
+                            <Fake height={50} />
+                        }
+                    </div>
                 </div>
             </PageArea>
         </PageContainer>
