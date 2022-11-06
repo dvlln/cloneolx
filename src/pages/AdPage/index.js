@@ -61,29 +61,6 @@ const Page = () => {
 
     return (
         <PageContainer>
-            {adInfo.category &&
-                <BreadChump>
-                    Você está em:
-                    <Link
-                        to="/"
-                    >
-                        Home
-                    </Link>
-                    /
-                    <Link
-                        to={`/ads?state=${adInfo.stateName}`}
-                    >
-                        {adInfo.stateName}
-                    </Link>
-                    /
-                    <Link
-                        to={`/ads?state=${adInfo.stateName}&cat=${adInfo.category.slug}`}
-                    >
-                        {adInfo.category.name}
-                    </Link>
-                    / {adInfo.title}
-                </BreadChump>
-            }
             <PageArea>
                 <div className="leftSide">
                     <div className="box">
@@ -126,50 +103,7 @@ const Page = () => {
                         </div>
                     </div>
                 </div>
-                <div className="rightSide">
-                    <div className="box box--padding">
-                        {loading && <Fake height={20} />}
-                        {adInfo.priceNegotiabled && 
-                            "Preço Negociável"
-                        }
-                        {!adInfo.priceNegotiabled && adInfo.price &&
-                            <div className="price">
-                                Preço: <span>R$ {adInfo.price}</span>
-                            </div>
-                        }
-                    </div>
-                    {loading && <Fake height={50} />}
-                    {adInfo.userInfo && 
-                        <>
-                            <a
-                                href={`mailto:${adInfo.userInfo.email}`}
-                                target="_blank"
-                                className="contactSellerLink"
-                            >
-                                Fale com o vendedor
-                            </a>
-                            <div className=" createBy box box--padding">
-                                <strong>{adInfo.userInfo.name}</strong>
-                                <small>Email: {adInfo.userInfo.email}</small>
-                                <small>Estado: {adInfo.userInfo.stateName}</small>
-                            </div>
-                        </>
-                    }
-                    
-                </div>
             </PageArea>
-            <OthersArea>
-                {adInfo.others &&
-                    <>
-                        <h2>Outras ofertas do vendedor</h2>
-                        <div className="list">
-                            {adInfo.others.map((i,k) => 
-                                <AdItem key={k} data={i} />
-                            )}    
-                        </div>    
-                    </>
-                }
-            </OthersArea>
         </PageContainer>
     )
 }

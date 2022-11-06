@@ -86,7 +86,7 @@ const Page = () => {
                                 onChange={e => setStateLoc(e.target.value)}
                                 required
                             >
-                                <option></option>
+                                <option>Sao Paulo</option>
                                 {stateList.map((i, k) =>
                                     <option
                                         key={k}
