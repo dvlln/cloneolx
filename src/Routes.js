@@ -28,7 +28,7 @@ export default () => {
             <RouterHandler exact path="/ad/:id">
                 <AdPage />
             </RouterHandler>
-            <RouterHandler exact path="/myaccount">
+            <RouterHandler exact path="/my-account">
                 <MyAccount />
             </RouterHandler>
             <RouterHandler path="*">
